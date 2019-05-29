@@ -78,7 +78,7 @@ data = parser(get_data("https://en.wikipedia.org/wiki/List_of_United_States_citi
               ,'wikitable sortable')
 
 #Write the first row that contains the categorical variables
-write_csv(csv_formatter(data[0].find_all('th')),'data.csv')
+write_csv(csv_formatter(data[0].find_all('th')),'city wiki without column.csv')
 
 
 #Filter data by table
@@ -95,11 +95,11 @@ for i in range(len(filtered_data)):
     
 #Write data to file
 for index in range(0,len(data2),11):
-    write_csv(filtered_data[index:index+11],'data.csv')
-    
-    
+    write_csv(filtered_data[index:index+11],'city wiki without column.csv')
+     
+
 #Add elevation column as additional data
-add_col('city wiki without additional data.csv','city wiki with additional data.csv','Elevation')
+add_col('city wiki without column.csv','city wiki with column.csv','Elevation')
 
 
 #Get each city's wikipedia url
@@ -114,13 +114,12 @@ for html in rows[1:len(rows)]:
 
 #Get elevation data
 elevation = []
-for link in links:
-    page = parser(get_data("https://en.wikipedia.org"+link),'table','infobox geography vcard')
-    for i in page:
-        for x in i.find_all('tr',class_='mergedtoprow'):
-            if 'Elevation' in x.text:
-                elevation.append(remove_unicode(x.find('td').text))
+#for link in links:
+#    page = parser(get_data("https://en.wikipedia.org"+link),'table','infobox geography vcard')
+#    for i in page:
+#        for x in i.find_all('tr',class_='mergedtoprow'):
+#            if 'Elevation' in x.text:
+#                elevation.append(remove_unicode(x.find('td').text))
                 
 #Add elevation data
-add_data('city wiki with additional data.csv','city wiki with elevation data.csv',elevation)
-
+add_data('city wiki with column.csv','city wiki with elevation data.csv',elevation_data)
