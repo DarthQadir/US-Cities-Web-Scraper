@@ -38,7 +38,7 @@ def csv_formatter(data):
 def write_csv(data,file_name):
     #Writes data to a csv file
     #file_name parameter should have a .csv extension
-    with open('file_name', mode='a+',encoding="utf-8-sig",newline='') as city_wiki:
+    with open(file_name, mode='a+',encoding="utf-8-sig",newline='') as city_wiki:
         city_writer = csv.writer(city_wiki, delimiter=',',escapechar=' ',quoting=csv.QUOTE_NONE)
         city_writer.writerow(data)
         
