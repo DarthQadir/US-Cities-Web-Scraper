@@ -122,4 +122,4 @@ for link in links:
                 elevation.append(remove_unicode(x.find('td').text))
                 
 #Add elevation data
-add_data('city wiki with column.csv','city wiki with elevation data.csv',elevation_data)
+add_data('city wiki with column.csv','city wiki with elevation data.csv',elevation)
