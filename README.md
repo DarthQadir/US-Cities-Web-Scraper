@@ -9,7 +9,9 @@ Scraper that extract data about US cities from a wikipedia page
 
 ### How to run
 
-You can simply run the code since I've given the functions appropriate inputs for the names of the CSV files.
+Run ```pip install requirements.txt``` to install the libraries
+
+Then run ```python scraper.py``` to run the scraper
 
 It takes a few minutes depending on your computer and internet connection to parse the elevation data from each city's wikipedia page.
 
