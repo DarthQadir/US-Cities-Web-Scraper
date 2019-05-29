@@ -114,12 +114,12 @@ for html in rows[1:len(rows)]:
 
 #Get elevation data
 elevation = []
-#for link in links:
-#    page = parser(get_data("https://en.wikipedia.org"+link),'table','infobox geography vcard')
-#    for i in page:
-#        for x in i.find_all('tr',class_='mergedtoprow'):
-#            if 'Elevation' in x.text:
-#                elevation.append(remove_unicode(x.find('td').text))
+for link in links:
+    page = parser(get_data("https://en.wikipedia.org"+link),'table','infobox geography vcard')
+    for i in page:
+        for x in i.find_all('tr',class_='mergedtoprow'):
+            if 'Elevation' in x.text:
+                elevation.append(remove_unicode(x.find('td').text))
                 
 #Add elevation data
 add_data('city wiki with column.csv','city wiki with elevation data.csv',elevation_data)
