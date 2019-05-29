@@ -9,7 +9,7 @@ Scraper that extract data about US cities from a wikipedia page
 
 ### How to run
 
-Run ```pip install requirements.txt``` to install the libraries
+Run ```pip install -r requirements.txt``` to install the dependencies
 
 Then run ```python scraper.py``` to run the scraper
 
